@@ -1,0 +1,161 @@
+ARTCRAFT-DOWNLOADER FREE USE LICENSE
+Version 1.0
+
+Copyright (c) 2026 DoggByte. All rights reserved.
+https://doggbyte.com
+
+This license applies to the program ArtCraft-Downloader and its documentation
+(together, the "Software"), made available by DoggByte ("the Author"). By
+downloading, installing, copying, or using the Software you ("You") accept
+these terms. If you do not accept them, do not use the Software.
+
+IN SHORT (this summary is for convenience; the numbered terms below are what
+count): the Software is free to use, for any purpose, including at work. You
+may share it for free. You may not sell it. If you build it into something
+else that you share with others, you must credit DoggByte. It comes with no
+warranty and the Author is not responsible for any damage.
+
+
+1. GRANT OF LICENSE
+
+   The Author grants You a free, worldwide, non-exclusive, non-transferable
+   license to:
+
+   (a) download, install, and run the Software, on any number of computers,
+       for any purpose, including commercial and business use, without
+       payment;
+
+   (b) make copies of the Software for backup and for Your own use; and
+
+   (c) redistribute unmodified copies of the Software to others free of
+       charge, provided that each copy is accompanied by this license and the
+       copyright notices.
+
+
+2. NO SELLING OR RESELLING
+
+   You may not sell, resell, rent, lease, lend for payment, sublicense for a
+   fee, or otherwise charge money or other consideration for the Software, for
+   a copy of it, or for access to or a download of it, whether on its own or
+   as a separately priced item, add-on, or bonus. You may not offer the
+   Software for sale or for payment on any marketplace, store, or website, and
+   You may not place it behind a paywall, subscription, or any download page
+   that requires payment or the provision of paid services to obtain it.
+
+   Recovering the plain cost of distributing a copy (for example, the price of
+   a blank USB drive, or ordinary data charges) is not "selling" the Software.
+
+   Using the Software in the course of Your own work, for example running it
+   as part of a service, project, or job for which You are paid, is permitted,
+   as long as You are not charging for the Software itself.
+
+
+3. USE IN OTHER PRODUCTS: ATTRIBUTION REQUIRED
+
+   If You include, bundle, embed, or ship the Software, or an unmodified part
+   of it, as part of another product, package, installer, script collection,
+   service, or documentation that You make available to other people (whether
+   free or paid), You must:
+
+   (a) credit the Author in a reasonably visible place, such as the product's
+       "About" or "Credits" screen, its README or documentation, or its
+       download page, using wording at least as clear as:
+
+           Includes ArtCraft-Downloader by DoggByte (https://doggbyte.com)
+
+   (b) keep this license and the Software's copyright notices with the
+       Software; and
+
+   (c) not state or imply that the Author endorses, sponsors, or is affiliated
+       with Your product.
+
+   Where the larger product is sold, the Software must not be the primary
+   thing being sold and must not be priced or advertised as a separate item;
+   Section 2 continues to apply to the Software itself.
+
+   Using the Software only for Yourself or inside Your own organization, without
+   giving it to others, requires no attribution.
+
+
+4. OTHER RESTRICTIONS
+
+   You may not remove or alter the copyright notices, license notices, or
+   attribution that are part of the Software, and You may not present the
+   Software as Your own work.
+
+
+5. THIRD-PARTY MATERIALS AND DOWNLOADED FILES
+
+   (a) The Software contains open-source components that are licensed to You
+       under their own license terms; see the file THIRD_PARTY_LICENSES.txt.
+       Nothing in this license restricts Your rights under those licenses.
+
+   (b) The Software downloads files that other parties publish (for example,
+       the "Craft" apps published by storytold on GitHub). Those files are not
+       part of the Software, are not covered by this license, and remain
+       subject to the terms of their owners. The Author does not own,
+       control, endorse, or license them, and the Software is not affiliated
+       with storytold or the ArtCraft apps. You are responsible for complying
+       with the terms that apply to the files You download.
+
+
+6. OWNERSHIP
+
+   The Software is licensed, not sold. The Author keeps all rights, title, and
+   interest in the Software that this license does not expressly grant to You.
+
+
+7. DISCLAIMER OF WARRANTY
+
+   THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY
+   KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, NON-
+   INFRINGEMENT, AND UNINTERRUPTED OR ERROR-FREE OPERATION. THE AUTHOR DOES
+   NOT WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT IT WILL
+   DOWNLOAD COMPLETE OR UNCORRUPTED FILES, OR THAT THE FILES IT DOWNLOADS ARE
+   SAFE, LAWFUL, OR FIT FOR ANY PURPOSE. YOU USE THE SOFTWARE ENTIRELY AT YOUR
+   OWN RISK.
+
+
+8. LIMITATION OF LIABILITY
+
+   TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT SHALL THE AUTHOR OR ANY
+   CONTRIBUTOR BE LIABLE TO YOU OR ANY OTHER PERSON FOR ANY CLAIM, DAMAGES, OR
+   OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT (INCLUDING
+   NEGLIGENCE), OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+   SOFTWARE OR ITS USE OR INABILITY TO USE IT, INCLUDING, WITHOUT LIMITATION,
+   ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+   DAMAGES; LOSS OR CORRUPTION OF DATA OR FILES; FULL DISKS OR DISK DAMAGE;
+   BANDWIDTH OR DATA CHARGES; LOSS OF PROFITS, REVENUE, OR BUSINESS; OR
+   BUSINESS INTERRUPTION, EVEN IF THE AUTHOR HAS BEEN ADVISED OF THE
+   POSSIBILITY OF SUCH DAMAGES. WHERE LIABILITY CANNOT BE EXCLUDED, IT IS
+   LIMITED TO THE AMOUNT YOU PAID FOR THE SOFTWARE, WHICH IS ZERO.
+
+   Some places do not allow certain exclusions or limitations, so parts of this
+   section may not apply to You. In that case, the exclusions and limitations
+   apply to the greatest extent the law allows, and nothing in this license
+   limits any right You have under law that cannot be waived.
+
+
+9. TERMINATION
+
+   This license ends automatically if You breach any of its terms. When it
+   ends You must stop using the Software and delete Your copies. Sections 2, 5,
+   6, 7, 8, and 10 survive termination.
+
+
+10. GENERAL
+
+   If any part of this license is found unenforceable, the rest remains in
+   effect and the unenforceable part will be applied to the closest extent
+   permitted. Failing to enforce a term is not a waiver of it. This license is
+   the entire agreement between You and the Author about the Software and
+   replaces any earlier understanding about it. The Author may publish new
+   versions of this license; the version that came with the copy of the
+   Software You received governs that copy.
+
+
+Questions about this license, or a request for permission to do something it
+does not allow (for example, to sell or bundle the Software commercially),
+can be directed to the Author through https://doggbyte.com or
+https://github.com/DoggByte/artcraft-downloader.
