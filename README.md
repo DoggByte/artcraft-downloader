@@ -17,7 +17,7 @@ $ artcraft-downloader --apps photocraft --os windows --arch x64
 
 ## Supported apps
 
-PhotoCraft · VectorCraft · FilmCraft · LightCraft · PdfCraft · EffectCraft · DesignCraft · FigCraft · WordCraft · SoundCraft · DeckCraft · CADCraft · GridCraft
+PhotoCraft · VectorCraft · FilmCraft · LightCraft · PdfCraft · EffectCraft · DesignCraft · FigCraft · WordCraft · SoundCraft · DeckCraft · CADCraft · GridCraft · ArtCraft-Launcher
 
 ## Features
 

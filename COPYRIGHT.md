@@ -20,7 +20,7 @@ If you build ArtCraft-Downloader into another product or package that you share 
 
 ## No affiliation
 
-ArtCraft-Downloader is an independent tool made by DoggByte. It is not made, endorsed, or supported by storytold or the creators of the ArtCraft apps. "ArtCraft", "PhotoCraft", "VectorCraft", "FilmCraft", "LightCraft", "PdfCraft", "EffectCraft", "DesignCraft", "FigCraft", "WordCraft", "SoundCraft", "DeckCraft", "CADCraft", "GridCraft" and "storytold" are names of their respective owners and are used here only to say which software the tool can download.
+ArtCraft-Downloader is an independent tool made by DoggByte. It is not made, endorsed, or supported by storytold or the creators of the ArtCraft apps. "ArtCraft", "PhotoCraft", "VectorCraft", "FilmCraft", "LightCraft", "PdfCraft", "EffectCraft", "DesignCraft", "FigCraft", "WordCraft", "SoundCraft", "DeckCraft", "CADCraft", "GridCraft", "ArtCraft Launcher" and "storytold" are names of their respective owners and are used here only to say which software the tool can download.
 
 The tool does not contain any of those apps. It downloads the release files that storytold publishes publicly on GitHub (<https://github.com/storytold>), and those files remain subject to their own owners' terms.
 

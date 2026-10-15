@@ -7,6 +7,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 Nothing yet.
 
+## [0.2.0] - 2026-10-15
+
+### Added
+- The ArtCraft Launcher (storytold's `craft-launcher` repository) is now a 14th app. It downloads like the others into `<OS>/ArtCraft-Launcher/<version>/`, and can be selected as `ArtCraft-Launcher`, `artcraft-launcher` or `craft-launcher`. It is included when no apps are named.
+
 ## [0.1.0] - 2026-10-15
 
 First release.

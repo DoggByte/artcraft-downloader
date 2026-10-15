@@ -1,6 +1,6 @@
 # ArtCraft-Downloader User Guide
 
-Version 0.1.0 · Copyright © 2026 [DoggByte](https://doggbyte.com) · [License](LICENSE.txt) · [Changelog](CHANGELOG.md) · [Copyright and notices](COPYRIGHT.md)
+Version 0.2.0 · Copyright © 2026 [DoggByte](https://doggbyte.com) · [License](LICENSE.txt) · [Changelog](CHANGELOG.md) · [Copyright and notices](COPYRIGHT.md)
 
 ---
 
@@ -29,7 +29,7 @@ Version 0.1.0 · Copyright © 2026 [DoggByte](https://doggbyte.com) · [License]
 
 ArtCraft-Downloader is a small command-line program that downloads the installers and archives of the **Craft apps** published by storytold on GitHub, and files them into a tidy folder tree: one folder per operating system, then one per app, then one per version.
 
-The 13 supported apps:
+The 14 supported apps (the 13 Craft apps and the ArtCraft Launcher, which is released from storytold's `craft-launcher` repository; its name works as `artcraft-launcher` or `craft-launcher`):
 
 | App | | App | |
 |---|---|---|---|
@@ -39,7 +39,7 @@ The 13 supported apps:
 | LightCraft | | WordCraft | |
 | PdfCraft | | SoundCraft | |
 | EffectCraft | | DesignCraft | |
-| FigCraft | | | |
+| FigCraft | | ArtCraft-Launcher | |
 
 What you get:
 
@@ -59,7 +59,7 @@ What it does *not* do: it does not install the apps for you, it does not modify 
 ## 2. Getting started in five minutes
 
 1. **Download the program** for your computer from the [Releases page](https://github.com/DoggByte/artcraft-downloader/releases/latest) (see [section 3](#3-installing) if you are not sure which one).
-2. **Open a terminal** (Terminal on macOS and Linux, PowerShell on Windows) in a folder where you want the downloads to go, and make sure you have free disk space (the full set of all 13 apps is roughly **17 GB**).
+2. **Open a terminal** (Terminal on macOS and Linux, PowerShell on Windows) in a folder where you want the downloads to go, and make sure you have free disk space (the full set of all 14 apps is roughly **17 GB** or more).
 3. **Run it.** For example, to download only PhotoCraft:
 
    ```
@@ -80,7 +80,7 @@ What it does *not* do: it does not install the apps for you, it does not modify 
 
 5. **Look in the folder.** You now have `Windows/PhotoCraft/0.9.0/`, `Linux/PhotoCraft/0.9.0/`, and so on, filled with the release files.
 
-To download all 13 apps, run it with no options:
+To download all 14 apps, run it with no options:
 
 ```
 artcraft-downloader
@@ -265,7 +265,7 @@ The exact set varies a little between apps (some apps have an extra server packa
 artcraft-downloader [options] [App ...]
 ```
 
-With no options, it downloads the **latest release of all 13 apps**, for **every platform and architecture**, into the **current folder**.
+With no options, it downloads the **latest release of all 14 apps**, for **every platform and architecture**, into the **current folder**.
 
 ### Options
 
@@ -278,7 +278,7 @@ With no options, it downloads the **latest release of all 13 apps**, for **every
 | `--arch LIST` | Download only the files for these CPU types: `x64`, `arm64`, `x86`, `riscv64`, `universal`. Alias: `--architecture`. |
 | `--dest DIR` | The folder to write into (default: the current folder). It is created if it does not exist. |
 | `--verify` | Re-check every selected file against the release's checksums, even if nothing new was downloaded. |
-| `--list` | Print the 13 app names and exit. |
+| `--list` | Print the 14 app names and exit. |
 | `-V`, `--version` | Print the program version and copyright, then exit. |
 | `-h`, `--help` | Print a summary of the options, then exit. |
 
@@ -565,13 +565,13 @@ When you used `--os`/`--arch`, only the files you selected are checked; files yo
 
 ## 12. Limitations
 
-Being upfront about what version 0.1.0 does not do:
+Being upfront about what version 0.2.0 does not do:
 
 - **No proxy support.** The program needs a direct connection to `github.com`. Proxy environment variables (`HTTPS_PROXY` and similar) are ignored.
 - **One download at a time.** Files are fetched one after another. You can run separate copies for different apps in different terminals if you want parallel downloads, but give each one *different apps* and do not point two copies at the same app and folder at the same time.
 - **No free-space check.** The program does not check your disk before downloading. The full set is about 17 GB.
 - **No progress bar.** You see a line per file, not a percentage.
-- **Fixed list of apps.** Only the 13 apps in [section 1](#1-what-it-does) are supported.
+- **Fixed list of apps.** Only the 14 apps in [section 1](#1-what-it-does) are supported.
 - **Existing files are trusted.** A file that is already in place is not re-downloaded, even if it is damaged, unless you delete it ([section 10](#10-checking-file-integrity)).
 - **It does not delete.** Old versions and leftover files are never removed.
 - **Not code-signed.** The Windows and macOS programs trigger a one-time confirmation prompt.
