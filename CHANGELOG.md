@@ -7,6 +7,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 Nothing yet.
 
+## [0.3.0] - 2026-10-15
+
+### Added
+- `--format` (alias `--type`): download only some installer types: `deb`, `rpm`, `appimage`, `flatpak`, `snap`, `msi`, `exe`, `portable`, `dmg`, `pkg`, `tar`, `web`, `cli`. For example `--format deb` fetches only the Debian packages.
+- `--native`: download only the files that fit the computer the program runs on (its platform, CPU type and installer type: `deb` on Debian-based Linux, `rpm` on Fedora and openSUSE, `appimage` on other Linux, `msi` on Windows, `dmg` on macOS, `tar` on FreeBSD). `--os`, `--arch` and `--format` given with it take precedence.
+
 ## [0.2.0] - 2026-10-15
 
 ### Added

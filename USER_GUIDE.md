@@ -1,6 +1,6 @@
 # ArtCraft-Downloader User Guide
 
-Version 0.2.0 · Copyright © 2026 [DoggByte](https://doggbyte.com) · [License](LICENSE.txt) · [Changelog](CHANGELOG.md) · [Copyright and notices](COPYRIGHT.md)
+Version 0.3.0 · Copyright © 2026 [DoggByte](https://doggbyte.com) · [License](LICENSE.txt) · [Changelog](CHANGELOG.md) · [Copyright and notices](COPYRIGHT.md)
 
 ---
 
@@ -276,6 +276,8 @@ With no options, it downloads the **latest release of all 14 apps**, for **every
 | `-r`, `--release VERSION` | Download this version instead of the latest, for example `0.8.2` or `v0.8.2`. Needs `--apps`. A version can also be set per app as `App=VERSION`. |
 | `-o`, `--os LIST` | Download only the files for these platforms: `windows`, `linux`, `macos`, `freebsd`, `cross-platform`. Alias: `--platform`. |
 | `--arch LIST` | Download only the files for these CPU types: `x64`, `arm64`, `x86`, `riscv64`, `universal`. Alias: `--architecture`. |
+| `--format LIST` | Download only these installer types: `deb`, `rpm`, `appimage`, `flatpak`, `snap`, `msi`, `exe`, `portable`, `dmg`, `pkg`, `tar`, `web`, `cli`. Alias: `--type`. |
+| `--native` | Download only what fits the computer you run it on: its platform, CPU type and installer type ([6.6](#66-this-computer---native)). |
 | `--dest DIR` | The folder to write into (default: the current folder). It is created if it does not exist. |
 | `--verify` | Re-check every selected file against the release's checksums, even if nothing new was downloaded. |
 | `--list` | Print the 14 app names and exit. |
@@ -286,14 +288,14 @@ Options that take a value accept either a space or an equals sign: `--dest D:\Ar
 
 ### Lists
 
-`--apps`, `--os` and `--arch` accept several values separated by commas, and you can also repeat the option:
+`--apps`, `--os`, `--arch` and `--format` accept several values separated by commas, and you can also repeat the option:
 
 ```
 --apps photocraft,figcraft
 --apps photocraft --apps figcraft
 ```
 
-Spaces after the commas are fine if you put the whole list in quotes (`--apps "photocraft, figcraft"`). Naming something twice is harmless. The word `all` for `--os` or `--arch` means "no filter".
+Spaces after the commas are fine if you put the whole list in quotes (`--apps "photocraft, figcraft"`). Naming something twice is harmless. The word `all` for `--os`, `--arch` or `--format` means "no filter".
 
 ### Platform names
 
@@ -315,13 +317,28 @@ Spaces after the commas are fine if you put the whole list in quotes (`--apps "p
 | `riscv64` (or `riscv`) | 64-bit RISC-V (Linux only) |
 | `universal` | the macOS universal build |
 
+### Installer type names
+
+| You type | Meaning |
+|---|---|
+| `deb` (or `debian`) | Debian, Ubuntu and similar: `.deb` packages |
+| `rpm` | Fedora, openSUSE and similar: `.rpm` packages |
+| `appimage` | Linux AppImages (and their `.zsync` update files) |
+| `flatpak`, `snap` | Flatpak and Snap packages |
+| `msi`, `exe` | Windows installers |
+| `portable` (or `zip`) | The portable Windows `.zip` builds |
+| `dmg`, `pkg` | macOS disk images and installer packages |
+| `tar` (or `tarball`, `tar.gz`, `tgz`) | Linux and FreeBSD `.tar.gz` archives |
+| `web` | The web build |
+| `cli` | The macOS command-line zip |
+
 ### Exit codes
 
 | Code | Meaning |
 |---|---|
 | `0` | Everything succeeded (including "nothing to do"). |
 | `1` | At least one download failed, a checksum did not match, or a release/version could not be found. |
-| `2` | The command line was wrong (unknown option, app, platform or architecture, a missing value, or `--release` without `--apps`). Nothing was downloaded. |
+| `2` | The command line was wrong (unknown option, app, platform, architecture or installer type, a missing value, or `--release` without `--apps`). Nothing was downloaded. |
 
 ---
 
@@ -329,7 +346,7 @@ Spaces after the commas are fine if you put the whole list in quotes (`--apps "p
 
 You can combine any of the switches; each one narrows the result further.
 
-### 6.1 Apps — `--apps`
+### 6.1 Apps - `--apps`
 
 ```
 artcraft-downloader --apps photocraft
@@ -339,7 +356,7 @@ artcraft-downloader photocraft figcraft          # same as above, without the op
 
 Run `artcraft-downloader --list` to see the exact names. An unknown name is rejected before anything is downloaded.
 
-### 6.2 Versions — `--release`
+### 6.2 Versions - `--release`
 
 By default you get the **latest** release, which is whatever GitHub marks as the latest (pre-releases are not counted as "latest"). To get a specific version instead:
 
@@ -363,7 +380,7 @@ If a version does not exist, the program tells you which ones do:
 
 (The list shows the most recent releases GitHub displays on the first page.) You can download pre-release versions the same way if you know the tag, for example `--release 0.1.1-rc.4`.
 
-### 6.3 Platforms — `--os`
+### 6.3 Platforms - `--os`
 
 ```
 artcraft-downloader --os windows
@@ -372,7 +389,7 @@ artcraft-downloader --os linux,macos
 
 Only the folders you choose are created. The release's `SHA256SUMS.txt` is always downloaded too (it is tiny) so your files can be verified, which means a `Cross-Platform/<App>/<version>/` folder holding just that file will also appear.
 
-### 6.4 CPU architecture — `--arch`
+### 6.4 CPU architecture - `--arch`
 
 ```
 artcraft-downloader --arch x64
@@ -386,7 +403,50 @@ Things to know:
 - Files that mention no CPU type at all, namely the web build in `Cross-Platform`, are *not* removed by `--arch`. To leave them out as well, add `--os windows,linux,macos` (or whichever platforms you want).
 - If a release has nothing that matches (for example `--os freebsd --arch arm64`), that app is reported and skipped; it is not an error.
 
-### 6.5 Combining them
+### 6.5 Installer types - `--format`
+
+```
+artcraft-downloader --format deb
+artcraft-downloader --format deb --arch x64
+artcraft-downloader --format rpm,appimage
+```
+
+Use this when you only want one kind of installer, for example the `.deb` packages for a Debian or Ubuntu computer. The first line fetches the Debian packages of every app, for every CPU type; the second only the 64-bit Intel/AMD ones.
+
+Things to know:
+
+- Files of any other type are skipped, including files whose type the program does not recognise. `SHA256SUMS.txt` is always fetched so the downloads can be verified.
+- `--format` looks at the file type only. It does not pick a platform for you, but each type belongs to one platform anyway (`deb` is always Linux, `msi` always Windows).
+- An AppImage's `.zsync` update file counts as `appimage`.
+- Which types exist depends on the app. If a release has none of the type you asked for, that app is reported and skipped; it is not an error.
+
+### 6.6 This computer - `--native`
+
+```
+artcraft-downloader --native
+```
+
+Looks at the computer it is running on and downloads only the files that fit it, for every app. The program prints what it chose, for example `native: Linux, x64, deb`.
+
+| Running on | Platform | Installer type |
+|---|---|---|
+| Debian, Ubuntu, Linux Mint and other Debian-based Linux | `linux` | `deb` |
+| Fedora, RHEL, CentOS, openSUSE and similar | `linux` | `rpm` |
+| Any other Linux | `linux` | `appimage` |
+| Windows | `windows` | `msi` |
+| macOS | `macos` | `dmg` |
+| FreeBSD | `freebsd` | `tar` |
+
+The CPU type is the one of the computer (`x64`, `arm64`, and so on).
+
+Things to know:
+
+- It is a shortcut for typing `--os`, `--arch` and `--format` yourself. Anything you give explicitly wins: `--native --format appimage` downloads AppImages instead of `.deb` files, and `--native --arch all` keeps every CPU type.
+- If you name another platform with `--os`, the installer type is not guessed, because it would not fit that platform.
+- The Linux type comes from `/etc/os-release`. If that file cannot be read, you get AppImages, which run on any distribution.
+- If the program cannot tell what your computer is, it stops with a message and downloads nothing.
+
+### 6.7 Combining them
 
 ```
 artcraft-downloader --os windows --arch x64
@@ -548,7 +608,7 @@ When you used `--os`/`--arch`, only the files you selected are checked; files yo
 | macOS: "cannot be opened because the developer cannot be verified" | Remove the download flag with `xattr -d com.apple.quarantine artcraft-downloader`, or right-click → *Open* ([3.4](#34-macos)). |
 | Windows: "Windows protected your PC" | Choose *More info → Run anyway*, or right-click the file → *Properties* → *Unblock* ([3.5](#35-windows)). |
 | `unknown app 'xyz'` | A typo in an app name. `artcraft-downloader --list` shows the valid names. |
-| `unknown platform` / `unknown architecture` | Use one of the names in [section 5](#platform-names). |
+| `unknown platform` / `unknown architecture` / `unknown installer type` | Use one of the names in [section 5](#platform-names). |
 | `--release needs --apps` | Version numbers differ per app, so say which app: `-a photocraft -r 0.8.2`. |
 | `release '1.2.3' not found. Available: ...` | That version does not exist for that app. Pick one from the list shown. |
 | `latest release lookup failed` or `asset listing failed` (mentioning status code 429 or 403) | GitHub is limiting your requests (often after many runs in a short time, or on a shared network). Wait a few minutes and run again. |
@@ -565,7 +625,7 @@ When you used `--os`/`--arch`, only the files you selected are checked; files yo
 
 ## 12. Limitations
 
-Being upfront about what version 0.2.0 does not do:
+Being upfront about what version 0.3.0 does not do:
 
 - **No proxy support.** The program needs a direct connection to `github.com`. Proxy environment variables (`HTTPS_PROXY` and similar) are ignored.
 - **One download at a time.** Files are fetched one after another. You can run separate copies for different apps in different terminals if you want parallel downloads, but give each one *different apps* and do not point two copies at the same app and folder at the same time.

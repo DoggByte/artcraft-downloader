@@ -23,7 +23,7 @@ PhotoCraft · VectorCraft · FilmCraft · LightCraft · PdfCraft · EffectCraft 
 
 - Latest release of every app with one command, or only the apps you name
 - Any specific older version (`--release 0.8.2`), including different versions per app
-- Only the platforms (`--os`) and CPU types (`--arch`) you need
+- Only the platforms (`--os`), CPU types (`--arch`) and installer types (`--format`, for example just the `.deb` packages) you need, or `--native` to pick what fits your own computer
 - Skips what you already have; rerun it any time to pick up new releases
 - Resumes interrupted downloads and verifies files against the published SHA-256 checksums
 - One self-contained file: no installer, no Python, nothing else required
@@ -66,6 +66,8 @@ The first run on macOS or Windows may ask you to confirm that you want to open a
 artcraft-downloader                                         # latest of all apps
 artcraft-downloader --apps photocraft,figcraft              # only these apps
 artcraft-downloader --os windows --arch x64                 # only 64-bit Windows files
+artcraft-downloader --format deb --arch x64                 # only the 64-bit .deb packages
+artcraft-downloader --native                                # only what fits this computer
 artcraft-downloader -a photocraft -r 0.8.2                  # a specific older version
 artcraft-downloader -a pdfcraft=0.7.1 -a deckcraft=0.6.1    # different versions per app
 artcraft-downloader --dest /mnt/storage/artcraft            # choose where files go

@@ -5,11 +5,11 @@ Copyright © 2026 DoggByte
 
 ArtCraft-Downloader is **free to use** and is licensed under the **ArtCraft-Downloader Free Use License**: see [`LICENSE.txt`](LICENSE.txt) for the full, binding terms. In short:
 
-- ✅ Free to use for any purpose, including at work.
-- ✅ Free to share, unmodified, at no charge.
-- ✅ You may include it in your own work if you credit the author (see below).
-- ❌ It may not be sold, resold, rented, or put behind a paywall.
-- ⚠️ No warranty, and the author is not liable for any damage.
+- Allowed: free to use for any purpose, including at work.
+- Allowed: free to share, unmodified, at no charge.
+- Allowed: you may include it in your own work if you credit the author (see below).
+- Not allowed: it may not be sold, resold, rented, or put behind a paywall.
+- Note: no warranty, and the author is not liable for any damage.
 
 If you build ArtCraft-Downloader into another product or package that you share with others, credit it with wording at least as clear as:
 
